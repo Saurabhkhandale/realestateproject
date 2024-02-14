@@ -1,16 +1,20 @@
-import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
+import About from "./pages/About";
+import Profile from "./pages/Profile";
 
 export default function App() {
   return (
-    <div>
-      <p className="text-red-500">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro animi nam
-        consequuntur adipisci laudantium, reprehenderit atque blanditiis
-        consequatur eos commodi! Maxime omnis fuga suscipit praesentium iusto
-        aliquam rerum aspernatur, nemo assumenda ratione quae vel. Facere
-        beatae, unde eum officiis, laudantium earum ex cumque repellendus
-        perferendis ipsam ea doloremque perspiciatis nemo!
-      </p>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
